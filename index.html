@@ -142,6 +142,7 @@
   .label.battle { color: var(--cyan); }
   .card h3 { margin: 6px 0 6px; font-size: 1.15rem; }
   .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+  .card .stats { margin-top: 8px; font-size: .8rem; color: var(--muted); opacity: .8; }
 
   .shorts { display: flex; gap: 22px; flex-wrap: wrap; }
   .short { width: 260px; max-width: 100%; }
@@ -217,10 +218,10 @@
     <div class="wrap">
       <h2>Latest <span>Videos</span></h2>
       <p class="sub">Click any video to play it right here.</p>
-      <div class="grid">
+      <div class="grid" id="video-grid">
         <article class="card">
-          <button class="thumb" data-id="KNZoYhXkrnQ" aria-label="Play: Dio Brando Explained">
-            <img src="https://i.ytimg.com/vi/KNZoYhXkrnQ/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span>
+          <button class="thumb" data-id="ebfIGrVlrlw" aria-label="Play: Dio Brando Explained">
+            <img src="https://i.ytimg.com/vi/ebfIGrVlrlw/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span>
           </button>
           <div class="card-body">
             <div class="label jojo">JoJo's Characters Explained</div>
@@ -229,8 +230,8 @@
           </div>
         </article>
         <article class="card">
-          <button class="thumb" data-id="R5SWbXrw-e0" aria-label="Play: Star Platinum Explained">
-            <img src="https://i.ytimg.com/vi/R5SWbXrw-e0/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span>
+          <button class="thumb" data-id="uvu6bLv2sgc" aria-label="Play: Star Platinum Explained">
+            <img src="https://i.ytimg.com/vi/uvu6bLv2sgc/hqdefault.jpg" alt="" loading="lazy"><span class="play"></span>
           </button>
           <div class="card-body">
             <div class="label jojo">JoJo's Stands Explained</div>
@@ -256,7 +257,7 @@
     <div class="wrap">
       <h2><span>Shorts</span></h2>
       <p class="sub">Quick hits, made for your phone.</p>
-      <div class="shorts">
+      <div class="shorts" id="shorts-grid">
         <article class="card short">
           <button class="thumb" data-id="HOpIuackdtY" aria-label="Play Short: Star Platinum Explained">
             <img src="https://i.ytimg.com/vi/HOpIuackdtY/oar2.jpg" onerror="this.src='https://i.ytimg.com/vi/HOpIuackdtY/hqdefault.jpg'" alt="" loading="lazy" style="object-fit:cover"><span class="play"></span>
@@ -326,6 +327,81 @@
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
+  // ---- Auto-updating video list ----
+  // videos.json is refreshed from YouTube every few hours by a GitHub Action
+  // (.github/workflows/update-videos.yml). The cards written in the HTML above
+  // are only a fallback for when videos.json can't be loaded.
+
+  // Hand-written descriptions, matched by the video's name (so they still work
+  // after a re-upload). New uploads don't need an entry: they show without one.
+  var BLURBS = {
+    'dio brando': 'Who is DIO, what makes him so dangerous, and how does The World stop time?',
+    'star platinum': "Jotaro's Stand broken down: speed, precision, power, and that famous ORA rush.",
+    'wonder of u': "Toru's Stand explained: why chasing it brings calamity down on you.",
+    'cass vs pim': 'An original animated showdown. Who wins the garden fight?'
+  };
+
+  function tidy(t) {
+    return t.replace(/Explaned/gi, 'Explained').replace(/Plantnum/gi, 'Platinum');
+  }
+
+  function guess(title) {
+    var t = tidy(title);
+    var parts = t.split(':');
+    var after = parts.length > 1 ? parts.slice(1).join(':').trim() : t;
+    if (/stand/i.test(t) && /explain/i.test(t)) return { label: "JoJo's Stands Explained", title: after, kind: 'jojo' };
+    if (/character/i.test(t) && /explain/i.test(t)) return { label: "JoJo's Characters Explained", title: after, kind: 'jojo' };
+    if (/explain/i.test(t)) return { label: 'Explained', title: t, kind: 'jojo' };
+    if (/\bvs\.?\b/i.test(t)) return { label: 'Original Battle', title: t, kind: 'battle' };
+    return { label: 'New Video', title: t, kind: 'battle' };
+  }
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function stats(v) {
+    var bits = [];
+    if (typeof v.views === 'number') bits.push(v.views.toLocaleString() + (v.views === 1 ? ' view' : ' views'));
+    if (v.published) bits.push(new Date(v.published).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }));
+    return bits.join(' · ');
+  }
+
+  function card(v) {
+    var g = guess(v.title);
+    var label = v.short ? 'Short' : g.label;
+    var kind = g.kind;
+    var title = v.short && /explain/i.test(tidy(v.title)) && g.title !== tidy(v.title) ? g.title + ' Explained' : g.title;
+    var blurb = BLURBS[g.title.toLowerCase()];
+    var img = v.short
+      ? '<img src="https://i.ytimg.com/vi/' + v.id + '/oar2.jpg" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg\'" alt="" loading="lazy">'
+      : '<img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="" loading="lazy">';
+    return '<article class="card' + (v.short ? ' short' : '') + '">' +
+      '<button class="thumb" data-id="' + esc(v.id) + '" aria-label="Play: ' + esc(title) + '">' + img + '<span class="play"></span></button>' +
+      '<div class="card-body">' +
+        '<div class="label ' + kind + '">' + esc(label) + '</div>' +
+        '<h3>' + esc(title) + '</h3>' +
+        (!v.short && blurb ? '<p>' + esc(blurb) + '</p>' : '') +
+        '<div class="stats">' + esc(stats(v)) + '</div>' +
+      '</div></article>';
+  }
+
+  function render(list) {
+    var vids = list.filter(function (v) { return !v.short; });
+    var shorts = list.filter(function (v) { return v.short; });
+    if (vids.length) document.getElementById('video-grid').innerHTML = vids.map(card).join('');
+    if (shorts.length) document.getElementById('shorts-grid').innerHTML = shorts.map(card).join('');
+    bindPlayers();
+  }
+
+  fetch('videos.json', { cache: 'no-cache' })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (data) { if (data && data.videos && data.videos.length) render(data.videos); })
+    .catch(function () { /* keep the built-in cards */ });
+
+  function bindPlayers() {
   document.querySelectorAll('.thumb[data-id]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var f = document.createElement('iframe');
@@ -340,6 +416,8 @@
       btn.replaceWith(box);
     }, { once: true });
   });
+  }
+  bindPlayers();
 </script>
 </body>
 </html>
