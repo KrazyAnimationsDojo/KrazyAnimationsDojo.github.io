@@ -1,32 +1,32 @@
 {
-  "updated": "2026-11-22T09:38:18+00:00",
+  "updated": "2026-11-22T12:37:03+00:00",
   "videos": [
     {
       "id": "i4PUSGqHoqc",
       "title": "Jojo's Stands Explained: Mr. President",
       "published": "2026-11-22T02:47:13+00:00",
-      "views": 1189,
+      "views": 1244,
       "short": true
     },
     {
       "id": "pkVIosfQBd8",
       "title": "Jojo's Stands Explained: Mr. President",
       "published": "2026-11-22T02:46:03+00:00",
-      "views": 2,
+      "views": 5,
       "short": false
     },
     {
       "id": "cSxbBQQVLz4",
       "title": "Jojo's Character Explained: Gyro Zeppeli",
       "published": "2026-11-22T02:27:44+00:00",
-      "views": 1134,
+      "views": 1149,
       "short": true
     },
     {
       "id": "gEtVsT03aBI",
       "title": "Jojo's Characters Explained: Gyro Zeppeli",
       "published": "2026-11-22T02:25:51+00:00",
-      "views": 1,
+      "views": 7,
       "short": false
     },
     {
@@ -47,7 +47,7 @@
       "id": "6Bi1hANAb9Q",
       "title": "Jojo's Stands Explained: Wonder of U",
       "published": "2026-11-20T23:55:39+00:00",
-      "views": 120,
+      "views": 126,
       "short": true
     },
     {
@@ -61,21 +61,21 @@
       "id": "ywtWdUUJUFQ",
       "title": "Jojo's Stands Explained: Wonder of U",
       "published": "2026-11-20T23:13:24+00:00",
-      "views": 505,
+      "views": 515,
       "short": false
     },
     {
       "id": "ebfIGrVlrlw",
       "title": "Jojo's Characters Explained: Dio Brando",
       "published": "2026-11-20T23:08:28+00:00",
-      "views": 132,
+      "views": 160,
       "short": false
     },
     {
       "id": "uvu6bLv2sgc",
       "title": "Jojo's Stands Explaned: Star Platinum",
       "published": "2026-11-20T23:05:39+00:00",
-      "views": 96,
+      "views": 98,
       "short": false
     },
     {
@@ -89,14 +89,14 @@
       "id": "QTe0zoCuXUE",
       "title": "Cass VS Pim",
       "published": "2026-11-20T07:01:15+00:00",
-      "views": 8,
+      "views": 9,
       "short": true
     },
     {
       "id": "jUeq-NLU-W8",
       "title": "Cass VS Pim",
       "published": "2026-11-20T05:11:55+00:00",
-      "views": 41,
+      "views": 43,
       "short": false
     }
   ]
