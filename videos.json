@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-22T21:30:11+00:00",
+  "updated": "2026-11-23T00:38:21+00:00",
   "videos": [
     {
       "id": "i4PUSGqHoqc",
       "title": "Jojo's Stands Explained: Mr. President",
       "published": "2026-11-22T02:47:13+00:00",
-      "views": 1288,
+      "views": 1296,
       "short": true
     },
     {
@@ -26,14 +26,14 @@
       "id": "gEtVsT03aBI",
       "title": "Jojo's Characters Explained: Gyro Zeppeli",
       "published": "2026-11-22T02:25:51+00:00",
-      "views": 8,
+      "views": 10,
       "short": false
     },
     {
       "id": "eJ_q4ZHKfi4",
       "title": "Jojo's Characters Explained: Sandman",
       "published": "2026-11-22T02:02:20+00:00",
-      "views": 340,
+      "views": 342,
       "short": true
     },
     {
@@ -47,21 +47,21 @@
       "id": "6Bi1hANAb9Q",
       "title": "Jojo's Stands Explained: Wonder of U",
       "published": "2026-11-20T23:55:39+00:00",
-      "views": 136,
+      "views": 137,
       "short": true
     },
     {
       "id": "qdj69NIcM50",
       "title": "Jojo Characters Explained: Dio Brando",
       "published": "2026-11-20T23:19:40+00:00",
-      "views": 807,
+      "views": 815,
       "short": true
     },
     {
       "id": "ywtWdUUJUFQ",
       "title": "Jojo's Stands Explained: Wonder of U",
       "published": "2026-11-20T23:13:24+00:00",
-      "views": 536,
+      "views": 549,
       "short": false
     },
     {
@@ -75,7 +75,7 @@
       "id": "uvu6bLv2sgc",
       "title": "Jojo's Stands Explaned: Star Platinum",
       "published": "2026-11-20T23:05:39+00:00",
-      "views": 127,
+      "views": 151,
       "short": false
     },
     {
@@ -96,7 +96,7 @@
       "id": "jUeq-NLU-W8",
       "title": "Cass VS Pim",
       "published": "2026-11-20T05:11:55+00:00",
-      "views": 44,
+      "views": 45,
       "short": false
     }
   ]
