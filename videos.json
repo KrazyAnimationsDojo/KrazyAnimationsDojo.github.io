@@ -1,25 +1,32 @@
 {
-  "updated": "2026-11-23T03:48:26+00:00",
+  "updated": "2026-11-23T07:05:31+00:00",
   "videos": [
+    {
+      "id": "3o_CPt-l-NQ",
+      "title": "Jojo's Characters Explained: Boomboom Brothers",
+      "published": "2026-11-23T05:18:45+00:00",
+      "views": 1,
+      "short": false
+    },
     {
       "id": "i4PUSGqHoqc",
       "title": "Jojo's Stands Explained: Mr. President",
       "published": "2026-11-22T02:47:13+00:00",
-      "views": 1296,
+      "views": 1298,
       "short": true
     },
     {
       "id": "pkVIosfQBd8",
       "title": "Jojo's Stands Explained: Mr. President",
       "published": "2026-11-22T02:46:03+00:00",
-      "views": 5,
+      "views": 8,
       "short": false
     },
     {
       "id": "cSxbBQQVLz4",
       "title": "Jojo's Character Explained: Gyro Zeppeli",
       "published": "2026-11-22T02:27:44+00:00",
-      "views": 1170,
+      "views": 1172,
       "short": true
     },
     {
@@ -33,7 +40,7 @@
       "id": "eJ_q4ZHKfi4",
       "title": "Jojo's Characters Explained: Sandman",
       "published": "2026-11-22T02:02:20+00:00",
-      "views": 347,
+      "views": 348,
       "short": true
     },
     {
@@ -47,7 +54,7 @@
       "id": "6Bi1hANAb9Q",
       "title": "Jojo's Stands Explained: Wonder of U",
       "published": "2026-11-20T23:55:39+00:00",
-      "views": 139,
+      "views": 140,
       "short": true
     },
     {
@@ -61,28 +68,28 @@
       "id": "ywtWdUUJUFQ",
       "title": "Jojo's Stands Explained: Wonder of U",
       "published": "2026-11-20T23:13:24+00:00",
-      "views": 564,
+      "views": 589,
       "short": false
     },
     {
       "id": "ebfIGrVlrlw",
       "title": "Jojo's Characters Explained: Dio Brando",
       "published": "2026-11-20T23:08:28+00:00",
-      "views": 252,
+      "views": 280,
       "short": false
     },
     {
       "id": "uvu6bLv2sgc",
       "title": "Jojo's Stands Explaned: Star Platinum",
       "published": "2026-11-20T23:05:39+00:00",
-      "views": 151,
+      "views": 161,
       "short": false
     },
     {
       "id": "HOpIuackdtY",
       "title": "Jojo's Stands Explaned: Star Plantnum",
       "published": "2026-11-20T10:49:49+00:00",
-      "views": 771,
+      "views": 772,
       "short": true
     },
     {
