@@ -1,6 +1,27 @@
 {
-  "updated": "2026-11-24T00:42:06+00:00",
+  "updated": "2026-11-24T03:46:48+00:00",
   "videos": [
+    {
+      "id": "3MDqJ-uC54c",
+      "title": "Jojo's Characters Explained: Boomboom Brothers",
+      "published": "2026-11-24T03:15:33+00:00",
+      "views": 4,
+      "short": true
+    },
+    {
+      "id": "0TMWEI-jRe8",
+      "title": "Jojo's Stands Explained: Scary Monster",
+      "published": "2026-11-24T03:05:48+00:00",
+      "views": 12,
+      "short": true
+    },
+    {
+      "id": "OgbGwD7EGhM",
+      "title": "Jojo's Stands Explained: Scary Monster",
+      "published": "2026-11-24T03:04:31+00:00",
+      "views": 0,
+      "short": false
+    },
     {
       "id": "3o_CPt-l-NQ",
       "title": "Jojo's Characters Explained: Boomboom Brothers",
@@ -12,7 +33,7 @@
       "id": "i4PUSGqHoqc",
       "title": "Jojo's Stands Explained: Mr. President",
       "published": "2026-11-22T02:47:13+00:00",
-      "views": 1315,
+      "views": 1321,
       "short": true
     },
     {
@@ -40,14 +61,14 @@
       "id": "eJ_q4ZHKfi4",
       "title": "Jojo's Characters Explained: Sandman",
       "published": "2026-11-22T02:02:20+00:00",
-      "views": 354,
+      "views": 356,
       "short": true
     },
     {
       "id": "3gFeD8Ie7Uc",
       "title": "Jojo's Characters Explained: Sandman",
       "published": "2026-11-22T01:48:03+00:00",
-      "views": 4,
+      "views": 5,
       "short": false
     },
     {
@@ -68,42 +89,21 @@
       "id": "ywtWdUUJUFQ",
       "title": "Jojo's Stands Explained: Wonder of U",
       "published": "2026-11-20T23:13:24+00:00",
-      "views": 1188,
+      "views": 1229,
       "short": false
     },
     {
       "id": "ebfIGrVlrlw",
       "title": "Jojo's Characters Explained: Dio Brando",
       "published": "2026-11-20T23:08:28+00:00",
-      "views": 333,
+      "views": 338,
       "short": false
     },
     {
       "id": "uvu6bLv2sgc",
       "title": "Jojo's Stands Explaned: Star Platinum",
       "published": "2026-11-20T23:05:39+00:00",
-      "views": 189,
-      "short": false
-    },
-    {
-      "id": "HOpIuackdtY",
-      "title": "Jojo's Stands Explaned: Star Plantnum",
-      "published": "2026-11-20T10:49:49+00:00",
-      "views": 773,
-      "short": true
-    },
-    {
-      "id": "QTe0zoCuXUE",
-      "title": "Cass VS Pim",
-      "published": "2026-11-20T07:01:15+00:00",
-      "views": 10,
-      "short": true
-    },
-    {
-      "id": "jUeq-NLU-W8",
-      "title": "Cass VS Pim",
-      "published": "2026-11-20T05:11:55+00:00",
-      "views": 48,
+      "views": 199,
       "short": false
     }
   ]
