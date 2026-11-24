@@ -400,6 +400,11 @@
     return { label: 'New Video', title: t, kind: 'battle' };
   }
 
+  // What a video is about, e.g. "d4c" for "Jojo's Stands Explained: D4C".
+  function topic(v) {
+    return guess(v.title).title.toLowerCase().replace(/[^a-z0-9]/g, '');
+  }
+
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
@@ -443,8 +448,14 @@
     ALL = list;
     var vids = list.filter(function (v) { return !v.short; });
     var shorts = list.filter(function (v) { return v.short; });
-    if (vids.length) document.getElementById('video-grid').innerHTML = vids.slice(0, RECENT).map(function (v) { return card(v); }).join('');
-    if (shorts.length) document.getElementById('shorts-grid').innerHTML = shorts.slice(0, RECENT).map(function (v) { return card(v); }).join('');
+    // Latest Shorts skips any Short about the same thing as a video already in
+    // Latest Videos, so the two sections never repeat the same topic.
+    var latestVids = vids.slice(0, RECENT);
+    var taken = {};
+    latestVids.forEach(function (v) { taken[topic(v)] = true; });
+    var latestShorts = shorts.filter(function (v) { return !taken[topic(v)]; }).slice(0, RECENT);
+    if (vids.length) document.getElementById('video-grid').innerHTML = latestVids.map(function (v) { return card(v); }).join('');
+    if (latestShorts.length) document.getElementById('shorts-grid').innerHTML = latestShorts.map(function (v) { return card(v); }).join('');
     document.getElementById('n-all').textContent = list.length;
     document.getElementById('n-videos').textContent = vids.length;
     document.getElementById('n-shorts').textContent = shorts.length;
