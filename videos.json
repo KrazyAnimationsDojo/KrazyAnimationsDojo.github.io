@@ -1,25 +1,25 @@
 {
-  "updated": "2026-11-24T06:52:12+00:00",
+  "updated": "2026-11-24T08:59:46+00:00",
   "videos": [
     {
       "id": "C8LIzQ5enx0",
       "title": "Jojo's Stands Explained: Boku no Rhythm wo Kiitekure",
       "published": "2026-11-24T06:08:42+00:00",
-      "views": 0,
+      "views": 1,
       "short": true
     },
     {
       "id": "SFiX7cwjowA",
       "title": "Jojo Stands Explained: Boku no Rhythm wo Kiitekure",
       "published": "2026-11-24T06:07:43+00:00",
-      "views": 0,
+      "views": 1,
       "short": false
     },
     {
       "id": "OfKeY8CwRm4",
       "title": "Jojo's Stands Explained: D4C",
       "published": "2026-11-24T06:06:27+00:00",
-      "views": 0,
+      "views": 1,
       "short": true
     },
     {
@@ -33,49 +33,49 @@
       "id": "Da_VK3GO8e0",
       "title": "Jojo's Characters Explained: Pork Pie Hat Kid",
       "published": "2026-11-24T04:12:04+00:00",
-      "views": 90,
+      "views": 120,
       "short": true
     },
     {
       "id": "_2vjsdsrm5s",
       "title": "Jojo's Characters Explained: Pork Pie Hat Kid",
       "published": "2026-11-24T04:06:11+00:00",
-      "views": 0,
+      "views": 2,
       "short": false
     },
     {
       "id": "3MDqJ-uC54c",
       "title": "Jojo's Characters Explained: Boomboom Brothers",
       "published": "2026-11-24T03:15:33+00:00",
-      "views": 68,
+      "views": 94,
       "short": true
     },
     {
       "id": "0TMWEI-jRe8",
       "title": "Jojo's Stands Explained: Scary Monster",
       "published": "2026-11-24T03:05:48+00:00",
-      "views": 217,
+      "views": 265,
       "short": true
     },
     {
       "id": "OgbGwD7EGhM",
       "title": "Jojo's Stands Explained: Scary Monster",
       "published": "2026-11-24T03:04:31+00:00",
-      "views": 0,
+      "views": 1,
       "short": false
     },
     {
       "id": "3o_CPt-l-NQ",
       "title": "Jojo's Characters Explained: Boomboom Brothers",
       "published": "2026-11-23T05:18:45+00:00",
-      "views": 26,
+      "views": 53,
       "short": false
     },
     {
       "id": "i4PUSGqHoqc",
       "title": "Jojo's Stands Explained: Mr. President",
       "published": "2026-11-22T02:47:13+00:00",
-      "views": 1321,
+      "views": 1329,
       "short": true
     },
     {
@@ -89,7 +89,7 @@
       "id": "cSxbBQQVLz4",
       "title": "Jojo's Character Explained: Gyro Zeppeli",
       "published": "2026-11-22T02:27:44+00:00",
-      "views": 1175,
+      "views": 1178,
       "short": true
     },
     {
@@ -103,8 +103,71 @@
       "id": "eJ_q4ZHKfi4",
       "title": "Jojo's Characters Explained: Sandman",
       "published": "2026-11-22T02:02:20+00:00",
-      "views": 361,
+      "views": 362,
       "short": true
+    },
+    {
+      "id": "3gFeD8Ie7Uc",
+      "title": "Jojo's Characters Explained: Sandman",
+      "published": "2026-11-22T01:48:03+00:00",
+      "views": 6,
+      "short": false
+    },
+    {
+      "id": "6Bi1hANAb9Q",
+      "title": "Jojo's Stands Explained: Wonder of U",
+      "published": "2026-11-20T23:55:39+00:00",
+      "views": 145,
+      "short": true
+    },
+    {
+      "id": "qdj69NIcM50",
+      "title": "Jojo Characters Explained: Dio Brando",
+      "published": "2026-11-20T23:19:40+00:00",
+      "views": 822,
+      "short": true
+    },
+    {
+      "id": "ywtWdUUJUFQ",
+      "title": "Jojo's Stands Explained: Wonder of U",
+      "published": "2026-11-20T23:13:24+00:00",
+      "views": 1295,
+      "short": false
+    },
+    {
+      "id": "ebfIGrVlrlw",
+      "title": "Jojo's Characters Explained: Dio Brando",
+      "published": "2026-11-20T23:08:28+00:00",
+      "views": 347,
+      "short": false
+    },
+    {
+      "id": "uvu6bLv2sgc",
+      "title": "Jojo's Stands Explaned: Star Platinum",
+      "published": "2026-11-20T23:05:39+00:00",
+      "views": 257,
+      "short": false
+    },
+    {
+      "id": "HOpIuackdtY",
+      "title": "Jojo's Stands Explaned: Star Plantnum",
+      "published": "2026-11-20T10:49:49+00:00",
+      "views": 774,
+      "short": true
+    },
+    {
+      "id": "QTe0zoCuXUE",
+      "title": "Cass VS Pim",
+      "published": "2026-11-20T07:01:15+00:00",
+      "views": 11,
+      "short": true
+    },
+    {
+      "id": "jUeq-NLU-W8",
+      "title": "Cass VS Pim",
+      "published": "2026-11-20T05:11:55+00:00",
+      "views": 48,
+      "short": false
     }
   ]
 }

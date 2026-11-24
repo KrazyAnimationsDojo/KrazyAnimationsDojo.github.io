@@ -102,7 +102,7 @@
   h2 span { color: var(--yellow); }
   .sub { color: var(--muted); margin: 0 0 28px; }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 22px; }
   .card {
     background: var(--panel); border-radius: var(--radius); overflow: hidden;
     border: 1px solid #ffffff10;
@@ -111,7 +111,7 @@
   .card:hover { transform: translateY(-4px); border-color: var(--cyan); }
 
   /* Socials */
-  .socials { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+  .socials { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 18px; }
   .social {
     display: flex; align-items: center; gap: 16px; padding: 20px;
     background: var(--panel); border: 1px solid #ffffff10; border-radius: var(--radius);
@@ -125,6 +125,7 @@
   .badge.yt { background: #ff0033; color: #fff; }
   .badge.tt { background: #000; color: #fff; }
   .badge.fb { background: #1877f2; color: #fff; }
+  .social > span:last-child { min-width: 0; overflow-wrap: anywhere; }
   .social strong { display: block; font-size: 1.05rem; }
   .social small { color: var(--muted); font-size: .9rem; }
   .thumb { position: relative; display: block; aspect-ratio: 16/9; background: #000; cursor: pointer; border: 0; padding: 0; width: 100%; }
@@ -145,8 +146,28 @@
   .card p { margin: 0; color: var(--muted); font-size: .95rem; }
   .card .stats { margin-top: 8px; font-size: .8rem; color: var(--muted); opacity: .8; }
 
-  .shorts { display: flex; gap: 22px; flex-wrap: wrap; }
-  .short { width: 260px; max-width: 100%; }
+  .shorts { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 18px; }
+  .short .card-body { padding: 12px 14px 16px; }
+  .short h3 { font-size: 1rem; }
+
+  /* All videos */
+  .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 22px; }
+  .chip {
+    border: 2px solid #ffffff25; background: transparent; color: var(--text);
+    padding: 8px 16px; border-radius: 999px; font: inherit; font-weight: 700; cursor: pointer;
+  }
+  .chip[aria-pressed="true"] { background: var(--purple); border-color: var(--purple); }
+  .chip .n { opacity: .7; font-weight: 600; margin-left: 4px; }
+  .search {
+    flex: 1 1 200px; min-width: 0; padding: 10px 16px; border-radius: 999px;
+    border: 2px solid #ffffff25; background: var(--panel); color: var(--text); font: inherit;
+  }
+  .search::placeholder { color: var(--muted); }
+  .all-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+  .all-grid .card-body { padding: 12px 14px 16px; }
+  .all-grid h3 { font-size: 1rem; }
+  .empty { color: var(--muted); }
+  .more { display: block; margin: 26px auto 0; }
   .short .thumb { aspect-ratio: 9/16; }
 
   /* CTA */
@@ -171,7 +192,9 @@
     .btns { justify-content: center; }
     .links { gap: 12px; font-size: .85rem; }
     .links .hide-sm { display: none; }
-    .shorts { justify-content: center; }
+    .brand-name { display: none; }
+    .shorts { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .all-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   }
   @media (prefers-reduced-motion: reduce) {
     .avatar { animation: none; }
@@ -184,12 +207,13 @@
 <nav>
   <div class="wrap">
     <a class="brand" href="#top">
-      <img src="https://yt3.googleusercontent.com/4WaoYPM_Aq51_byf87jXPoalqF7ZpB8_fc1SK2apWVrQuRHJ39eLgiJV2lLlAZQ9pXJyqvObDA=s88-c-k-c0x00ffffff-no-rj" alt="">
-      KrazyAnimationsDojo
+      <img src="https://yt3.googleusercontent.com/4WaoYPM_Aq51_byf87jXPoalqF7ZpB8_fc1SK2apWVrQuRHJ39eLgiJV2lLlAZQ9pXJyqvObDA=s88-c-k-c0x00ffffff-no-rj" alt="KrazyAnimationsDojo home">
+      <span class="brand-name">KrazyAnimationsDojo</span>
     </a>
     <div class="links">
       <a href="#videos">Videos</a>
       <a href="#shorts">Shorts</a>
+      <a href="#all">All</a>
       <a href="#follow">Follow</a>
     </div>
   </div>
@@ -256,7 +280,7 @@
 
   <section id="shorts" style="padding-top:0">
     <div class="wrap">
-      <h2><span>Shorts</span></h2>
+      <h2>Latest <span>Shorts</span></h2>
       <p class="sub">Quick hits, made for your phone.</p>
       <div class="shorts" id="shorts-grid">
         <article class="card short">
@@ -278,6 +302,21 @@
           </div>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section id="all" style="padding-top:0">
+    <div class="wrap">
+      <h2>All <span>Videos</span></h2>
+      <p class="sub">Every video and Short on the channel, newest first.</p>
+      <div class="toolbar" role="group" aria-label="Filter videos">
+        <button class="chip" data-filter="all" aria-pressed="true">All<span class="n" id="n-all"></span></button>
+        <button class="chip" data-filter="videos" aria-pressed="false">Videos<span class="n" id="n-videos"></span></button>
+        <button class="chip" data-filter="shorts" aria-pressed="false">Shorts<span class="n" id="n-shorts"></span></button>
+        <input class="search" id="search" type="search" placeholder="Search, e.g. Dio" aria-label="Search videos">
+      </div>
+      <div class="all-grid" id="all-grid"><p class="empty">Loading videos…</p></div>
+      <button class="btn btn-ghost more" id="more" hidden>Show more</button>
     </div>
   </section>
 
@@ -374,16 +413,18 @@
     return bits.join(' · ');
   }
 
-  function card(v) {
+  function card(v, inAll) {
     var g = guess(v.title);
     var label = v.short ? 'Short' : g.label;
+    var tall = v.short && !inAll;   // Shorts are tall in "Latest Shorts", 16:9 in "All Videos"
     var kind = g.kind;
     var title = v.short && /explain/i.test(tidy(v.title)) && g.title !== tidy(v.title) ? g.title + ' Explained' : g.title;
     var blurb = BLURBS[g.title.toLowerCase()];
     var img = v.short
       ? '<img src="https://i.ytimg.com/vi/' + v.id + '/oar2.jpg" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg\'" alt="" loading="lazy">'
       : '<img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="" loading="lazy">';
-    return '<article class="card' + (v.short ? ' short' : '') + '">' +
+    if (inAll) blurb = null;
+    return '<article class="card' + (tall ? ' short' : '') + '">' +
       '<button class="thumb" data-id="' + esc(v.id) + '" aria-label="Play: ' + esc(title) + '">' + img + '<span class="play"></span></button>' +
       '<div class="card-body">' +
         '<div class="label ' + kind + '">' + esc(label) + '</div>' +
@@ -393,21 +434,59 @@
       '</div></article>';
   }
 
+  var RECENT = 6;     // how many videos and Shorts the "Latest" sections show
+  var PAGE = 12;      // how many cards "All Videos" shows before "Show more"
+  var ALL = [], filter = 'all', query = '', shown = PAGE;
+
   function render(list) {
+    list = list.slice().sort(function (a, b) { return (b.published || '').localeCompare(a.published || ''); });
+    ALL = list;
     var vids = list.filter(function (v) { return !v.short; });
     var shorts = list.filter(function (v) { return v.short; });
-    if (vids.length) document.getElementById('video-grid').innerHTML = vids.map(card).join('');
-    if (shorts.length) document.getElementById('shorts-grid').innerHTML = shorts.map(card).join('');
+    if (vids.length) document.getElementById('video-grid').innerHTML = vids.slice(0, RECENT).map(function (v) { return card(v); }).join('');
+    if (shorts.length) document.getElementById('shorts-grid').innerHTML = shorts.slice(0, RECENT).map(function (v) { return card(v); }).join('');
+    document.getElementById('n-all').textContent = list.length;
+    document.getElementById('n-videos').textContent = vids.length;
+    document.getElementById('n-shorts').textContent = shorts.length;
+    renderAll();
     bindPlayers();
   }
 
+  function renderAll() {
+    var q = query.trim().toLowerCase();
+    var list = ALL.filter(function (v) {
+      if (filter === 'videos' && v.short) return false;
+      if (filter === 'shorts' && !v.short) return false;
+      return !q || tidy(v.title).toLowerCase().indexOf(q) !== -1;
+    });
+    var grid = document.getElementById('all-grid');
+    grid.innerHTML = list.length
+      ? list.slice(0, shown).map(function (v) { return card(v, true); }).join('')
+      : '<p class="empty">No videos match that.</p>';
+    var more = document.getElementById('more');
+    more.hidden = list.length <= shown;
+    more.textContent = 'Show more (' + (list.length - shown) + ')';
+    bindPlayers();
+  }
+
+  document.querySelectorAll('.chip').forEach(function (b) {
+    b.addEventListener('click', function () {
+      filter = b.dataset.filter; shown = PAGE;
+      document.querySelectorAll('.chip').forEach(function (c) { c.setAttribute('aria-pressed', String(c === b)); });
+      renderAll();
+    });
+  });
+  document.getElementById('search').addEventListener('input', function (e) { query = e.target.value; shown = PAGE; renderAll(); });
+  document.getElementById('more').addEventListener('click', function () { shown += PAGE; renderAll(); });
+
   fetch('videos.json', { cache: 'no-cache' })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(function (data) { if (data && data.videos && data.videos.length) render(data.videos); })
-    .catch(function () { /* keep the built-in cards */ });
+    .then(function (data) { if (data && data.videos && data.videos.length) render(data.videos); else throw 0; })
+    .catch(function () { document.getElementById('all').hidden = true; /* keep the built-in cards */ });
 
   function bindPlayers() {
-  document.querySelectorAll('.thumb[data-id]').forEach(function (btn) {
+  document.querySelectorAll('.thumb[data-id]:not([data-bound])').forEach(function (btn) {
+    btn.setAttribute('data-bound', '');
     btn.addEventListener('click', function () {
       var f = document.createElement('iframe');
       f.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.id + '?autoplay=1&rel=0';
