@@ -1,25 +1,53 @@
 {
-  "updated": "2026-11-25T00:45:24+00:00",
+  "updated": "2026-11-25T03:49:51+00:00",
   "videos": [
+    {
+      "id": "MBzp9BEdLK0",
+      "title": "Jojo's Explained: The Steel Ball Run",
+      "published": "2026-11-25T01:46:33+00:00",
+      "views": 104,
+      "short": true
+    },
+    {
+      "id": "qlHYVDNolbU",
+      "title": "Jojo's Explained: The Steel Ball Run",
+      "published": "2026-11-25T01:45:38+00:00",
+      "views": 1,
+      "short": false
+    },
+    {
+      "id": "i14lReqkIT0",
+      "title": "Jojo's Explained: The Spin",
+      "published": "2026-11-25T01:44:44+00:00",
+      "views": 77,
+      "short": true
+    },
+    {
+      "id": "dWOmaQlnE5k",
+      "title": "Jojo's Explained: The Spin",
+      "published": "2026-11-25T01:44:09+00:00",
+      "views": 0,
+      "short": false
+    },
     {
       "id": "C8LIzQ5enx0",
       "title": "Jojo's Stands Explained: Boku no Rhythm wo Kiitekure",
       "published": "2026-11-24T06:08:42+00:00",
-      "views": 11,
+      "views": 12,
       "short": true
     },
     {
       "id": "SFiX7cwjowA",
       "title": "Jojo Stands Explained: Boku no Rhythm wo Kiitekure",
       "published": "2026-11-24T06:07:43+00:00",
-      "views": 12,
+      "views": 66,
       "short": false
     },
     {
       "id": "OfKeY8CwRm4",
       "title": "Jojo's Stands Explained: D4C",
       "published": "2026-11-24T06:06:27+00:00",
-      "views": 14,
+      "views": 18,
       "short": true
     },
     {
@@ -33,7 +61,7 @@
       "id": "Da_VK3GO8e0",
       "title": "Jojo's Characters Explained: Pork Pie Hat Kid",
       "published": "2026-11-24T04:12:04+00:00",
-      "views": 188,
+      "views": 198,
       "short": true
     },
     {
@@ -47,7 +75,7 @@
       "id": "3MDqJ-uC54c",
       "title": "Jojo's Characters Explained: Boomboom Brothers",
       "published": "2026-11-24T03:15:33+00:00",
-      "views": 137,
+      "views": 138,
       "short": true
     },
     {
@@ -68,14 +96,14 @@
       "id": "3o_CPt-l-NQ",
       "title": "Jojo's Characters Explained: Boomboom Brothers",
       "published": "2026-11-23T05:18:45+00:00",
-      "views": 106,
+      "views": 127,
       "short": false
     },
     {
       "id": "i4PUSGqHoqc",
       "title": "Jojo's Stands Explained: Mr. President",
       "published": "2026-11-22T02:47:13+00:00",
-      "views": 1419,
+      "views": 1438,
       "short": true
     },
     {
